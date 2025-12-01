@@ -1,0 +1,5 @@
+ut_eid,name,courses,confidence_level,availability,email,topics_need,study_life,work_hours
+jsmith,John,"CS 313E,M 408C",5,Mon 3pm;Wed 4pm,john.smith@utexas.edu,"Heaps,Trees",quiet,6
+aavila,Ana,"CS 313E,GOV 310",1,Mon 3pm;Tue 10am,ana.avila@utexas.edu,Heaps,quiet,4
+bchen,Ben,"CS 313E,M 408C",3,Fri 1pm,ben.chen@utexas.edu,Trees,group,3
+ajones,Alex,"CS 313E,GOV 310,PHI 301",4,Tue 10am;Wed 4pm,alex.jones@utexas.edu,Heaps,quiet,4
