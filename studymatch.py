@@ -151,7 +151,7 @@ class StudyMatch:
                 shared_topics = seeker.topics_need & candidate.topics_need
                 score += len(shared_topics) * 15
 
-            # 6. Study Style Compatibility
+            # 6. Study Style Compatibility (Test case 4: this is weighted more)
             if seeker.study_life != 'none' and candidate.study_life != 'none':
                 if seeker.study_life == candidate.study_life:
                     score += 12
@@ -171,7 +171,7 @@ class StudyMatch:
             )
 
 
-    # Definition: Gets the best match, shared times, AND shared courses (UPDATED RETURN TYPE)
+    # Definition: Gets the best match, shared times, AND shared courses 
     def get_best_match(self, seeker_eid: str) -> Optional[Tuple[Student, Set[str], Set[str]]]:
         # Return type: (Best Student, Shared Times, Shared Courses)
         if not self.match_heap:
@@ -181,7 +181,7 @@ class StudyMatch:
         if not seeker:
             return None
 
-        # Pop the highest scoring student
+        # Pop the highest scoring student (Test Case 3 - Checking the max)
         _, best_match = heapq.heappop(self.match_heap)
 
         # Calculate the required intersection data
