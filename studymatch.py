@@ -34,7 +34,7 @@ class StudyMatch:
     def __init__(self):
         self.student_index: Dict[str, Student] = {}
         self.open_slots_queue: List[str] = []
-        self.match_heap: List[Student] = []
+        self.match_heap: List[Tuple[int, Student]] = []
         self.tie_break_heap: List[Tuple[int, str]] = []
 
     # Data Structure Methods
@@ -145,7 +145,6 @@ class StudyMatch:
 
             # 4. Set score and push to heap
             candidate.compatibility_score = score
-            heapq.heappush(self.match_heap, candidate)
 
             # 5. Match based on topics
             if seeker.topics_need and candidate.topics_need:
@@ -157,14 +156,14 @@ class StudyMatch:
                 if seeker.study_life == candidate.study_life:
                     score += 12
 
-            # 6. Workload Similarity
+            # 7. Workload Similarity
             difference = abs(seeker.work_hours - candidate.work_hours)
             work_score = max(0, 10 - difference)
             score += work_score
 
             candidate.compatibility_score = score
 
-            heapq.heappush(self.match_heap, (-candidate.compatibility_score, candidate))
+            heapq.heappush(self.match_heap, (-score, candidate))
 
             heapq.heappush(
                 self.tie_break_heap,
@@ -180,10 +179,10 @@ class StudyMatch:
 
         seeker = self.student_index.get(seeker_eid)
         if not seeker:
-             return None
+            return None
 
         # Pop the highest scoring student
-        best_match = heapq.heappop(self.match_heap)
+        _, best_match = heapq.heappop(self.match_heap)
 
         # Calculate the required intersection data
         shared_slots = seeker.individual_availability.intersection(best_match.individual_availability)
@@ -225,8 +224,7 @@ if __name__ == "__main__":
 
     # Test Add and Get Resources
     app.add_resource("ajones", "GOV310 Final Review.pdf")
-    print("\nAna's Resources: ")
-    print(app.get_resources("aavila"))
+    print("\nAna's Resources:", app.get_resources("aavila"))
 
     # 2 Test Queue
     app.post_availability('Mon 3pm')
