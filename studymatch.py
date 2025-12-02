@@ -131,22 +131,22 @@ class StudyMatch:
 
             score = 0
 
-            # 1. Course Overlap Score (Primary Factor)
+            # 1 Course Overlap Score (Primary Factor)
             shared_courses = seeker.courses.intersection(candidate.courses)
             score += len(shared_courses) * 10
 
-            # 2. Confidence Mismatch Score (Complexity Factor)
+            # 2 Confidence Mismatch Score (Complexity Factor)
             confidence_diff = abs(seeker.confidence_level - candidate.confidence_level)
             score += confidence_diff * 3
 
-            # 3. Time Slot Overlap Score (Individual Availability Match)
+            # 3 Time Slot Overlap Score (Individual Availability Match)
             shared_slots = seeker.individual_availability.intersection(candidate.individual_availability)
             score += len(shared_slots) * 5
 
-            # 4. Set score and push to heap
+            # 4 Set score and push to heap
             candidate.compatibility_score = score
 
-            # 5. Match based on topics
+            # 5 Match based on topics
             if seeker.topics_need and candidate.topics_need:
                 shared_topics = seeker.topics_need & candidate.topics_need
                 score += len(shared_topics) * 15
@@ -186,12 +186,12 @@ class StudyMatch:
 
         # Calculate the required intersection data
         shared_slots = seeker.individual_availability.intersection(best_match.individual_availability)
-        shared_courses = seeker.courses.intersection(best_match.courses) # NEW: Calculate shared courses
+        shared_courses = seeker.courses.intersection(best_match.courses) 
 
         # Return a tuple containing all match details
         return (best_match, shared_slots, shared_courses)
 
-# Main execution block (UPDATED)
+# Main execution block 
 
 if __name__ == "__main__":
 
