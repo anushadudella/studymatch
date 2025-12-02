@@ -112,7 +112,7 @@ This project was developed with the assistance of an artificial intelligence mod
 
 ### AI Model Citation
 
-The core Python code in this repository was generated and refined by Google's Gemini large language model (LLM) in response to a user request for a student matching system.
+The core Python code in this repository was generated and refined by Google's Gemini large language model (LLM).
 
 > Gemini. (2025, December). *StudyMatch: Intelligent Peer Matching System* Google.
 
