@@ -1,8 +1,3 @@
-I've updated the README to include the **Citations and Acknowledgements** section you requested, keeping the tone professional and informative.
-
-Here is the complete, revised README:
-
------
 
 # StudyMatch: Intelligent Peer Matching System
 
