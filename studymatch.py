@@ -4,7 +4,6 @@ import heapq
 from typing import Dict, List, Set, Tuple, Optional
 
 # 1 Student Class
-# hi
 class Student:
     # Definition: Initializes a new Student object
     def __init__(self, ut_eid: str, name: str, courses: List[str], confidence: int, availability: List[str], email: str, topics_need: List[str], study_life: str, work_hours: int):
