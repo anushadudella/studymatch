@@ -114,11 +114,11 @@ This project was developed with the assistance of an artificial intelligence mod
 
 The core Python code in this repository was generated and refined by Google's Gemini large language model (LLM) in response to a user request for a student matching system.
 
-> Gemini. (2025, December). *StudyMatch: Intelligent Peer Matching System* [Computer software]. Google.
+> Gemini. (2025, December). *StudyMatch: Intelligent Peer Matching System* Google.
 
 ### Library Citation
 
-The project relies solely on standard, built-in Python modules.
+The project relies solely on standard, built-in Python modules. We also referenced our course textbook: Data Structures and Algorithms in Python for concepts on Heaps and Hash Maps.
 
   * **`csv`**: Used for reading and parsing student data from the `students.csv` file.
   * **`heapq`**: Essential for implementing the Max-Heap data structure to prioritize and retrieve the best match efficiently.
