@@ -22,7 +22,7 @@ class Student:
     # Definition: Compares this student to another for the Max-Heap
     def __lt__(self, other):
         return self.compatibility_score < other.compatibility_score
-
+g"
     # Definition: Provides a string representation of the Student
     def __repr__(self):
         return f"Student(Name: {self.name}, EID: {self.ut_eid}, Score: {self.compatibility_score}, Confidence: {self.confidence_level}/5, Email: {self.email})"
